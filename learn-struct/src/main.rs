@@ -16,8 +16,15 @@ fn main() {
     println!("{}", user1.username);
 
     let user2 = User {
+        email: String::from("gezhiheng.me@gmail.com"),
         ..user1
     };
+
+    println!("{}", &user2.username);
+
+    println!("{}", user1.active);
+
+    println!("{}", user1.email);
 
     println!("{}", user1.sign_in_count);
 }

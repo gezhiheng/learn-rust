@@ -33,5 +33,9 @@ fn main() {
 
     println!("rect1 can hold rect {} ?", rect1.can_hold(&rect2));
 
+    println!("{:#?}", rect2);
+
     dbg!(&rect1);
+
+    println!("{:#?}", rect1);
 }
