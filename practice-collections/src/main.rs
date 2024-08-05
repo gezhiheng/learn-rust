@@ -9,6 +9,8 @@ fn main() {
     let mode_num = get_mode_num(&nums);
     println!("mode_num is {mode_num}");
 
+    let word = pig_latin(&"apple");
+    println!("pig latin word is {word}");
 }
 
 fn get_middle_num(vec: &mut Vec<i32>) -> i32 {
@@ -40,6 +42,16 @@ fn get_mode_num(vec: &Vec<i32>) -> &i32 {
     res_key
 }
 
-fn pig_latin(str: &str) {
-    
+fn pig_latin(str: &str) -> String {
+    let vowels = vec!['a', 'e', 'i', 'o', 'u'];
+
+    if vowels.contains(&str.chars().next().unwrap()) {
+        format!("{}-hay", str)
+    } else {
+        let mut words = str.chars();
+        let first_word = words.next().unwrap();
+        let rest_words: String = words.collect();
+
+        format!("{}-{}ay", first_word, rest_words)
+    }
 }
