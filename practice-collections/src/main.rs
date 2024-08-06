@@ -11,6 +11,8 @@ fn main() {
 
     let word = pig_latin(&"apple");
     println!("pig latin word is {word}");
+
+    employee(&vec!["Add Sally to Engineering".to_string(), "Add Amir to Sales".to_string(), "Add Henry to Engineering".to_string()])
 }
 
 fn get_middle_num(vec: &mut Vec<i32>) -> i32 {
@@ -54,4 +56,14 @@ fn pig_latin(str: &str) -> String {
 
         format!("{}-{}ay", first_word, rest_words)
     }
+}
+
+fn employee(str_vec: &Vec<String>) {
+    let mut empolyee_map = HashMap::<String, Vec<String>>::new();
+    for input in str_vec {
+        let v: Vec<&str> = input.split(' ').collect();
+        let vec = Vec::<String>::new();
+        empolyee_map.entry(v[3].to_string()).or_insert(vec).push(v[1].to_string());
+    }
+    println!("empolyee_map is {empolyee_map:?}");
 }
