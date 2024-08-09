@@ -9,7 +9,6 @@ pub struct Config {
 impl Config {
     pub fn build(args: &[String]) -> Result<Config, &'static str> {
         if args.len() < 3 {
-            // TODO when remove return, why expected this to be ()
             return Err("Not enough arguments...");
         }
 
