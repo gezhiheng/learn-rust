@@ -1,10 +1,10 @@
 use hello::ThreadPool;
 use std::{
     fs,
-    io::{ prelude::*, BufReader},
-    net::{  TcpListener, TcpStream},
+    io::{prelude::*, BufReader},
+    net::{TcpListener, TcpStream},
     thread,
-    time::Duration,   
+    time::Duration,
 };
 
 fn main() {
